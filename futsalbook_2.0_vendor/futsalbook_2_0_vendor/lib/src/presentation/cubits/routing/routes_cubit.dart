@@ -15,7 +15,25 @@ class RoutesCubit extends Cubit<RoutesState> {
         break;
       case 1:
         emit(RoutesState(
-            bottomNavItems: PAGES.booked.screenName,
+            bottomNavItems: PAGES.bookedList.screenName,
+            index: index,
+            status: RouteStatus.initial));
+        break;
+      case 2:
+        emit(RoutesState(
+            bottomNavItems: PAGES.promotion.screenName,
+            index: index,
+            status: RouteStatus.initial));
+        break;
+      case 3:
+        emit(RoutesState(
+            bottomNavItems: PAGES.venueList.screenName,
+            index: index,
+            status: RouteStatus.initial));
+        break;
+      case 4:
+        emit(RoutesState(
+            bottomNavItems: PAGES.settings.screenName,
             index: index,
             status: RouteStatus.initial));
         break;

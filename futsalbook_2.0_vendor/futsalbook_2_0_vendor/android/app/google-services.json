@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1037828040689",
+    "firebase_url": "https://futsal-book-2-0-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "futsal-book-2-0",
+    "storage_bucket": "futsal-book-2-0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1037828040689:android:7546484c8a52665356c650",
+        "android_client_info": {
+          "package_name": "com.example.futsalbook_2_0_vendor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1037828040689-8a1ibbm1pfknhqd5hih17igmtnde9pr3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMjXcpDdhLcxjep_j_WamCM6zaD1URXgc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1037828040689-8a1ibbm1pfknhqd5hih17igmtnde9pr3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

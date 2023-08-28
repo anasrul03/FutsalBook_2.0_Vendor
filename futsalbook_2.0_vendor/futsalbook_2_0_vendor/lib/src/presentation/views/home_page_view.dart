@@ -23,9 +23,24 @@ class _HomePageState extends State<HomePage> {
       label: 'Home',
     ),
     BottomNavigationBarRoute(
-      initialLocation: PAGES.booked.screenPath,
-      icon: const Icon(Icons.bookmark_border),
+      initialLocation: PAGES.bookedList.screenPath,
+      icon: const Icon(Icons.bookmark),
       label: 'Booked',
+    ),
+    BottomNavigationBarRoute(
+      initialLocation: PAGES.promotion.screenPath,
+      icon: const Icon(Icons.discount),
+      label: 'Promotion',
+    ),
+    BottomNavigationBarRoute(
+      initialLocation: PAGES.venueList.screenPath,
+      icon: const Icon(Icons.location_city),
+      label: 'Venues',
+    ),
+    BottomNavigationBarRoute(
+      initialLocation: PAGES.settings.screenPath,
+      icon: const Icon(Icons.settings),
+      label: 'Settings',
     ),
   ];
 
@@ -56,6 +71,7 @@ BlocBuilder<RoutesCubit, RoutesState> _buildBottomNavigation(
           },
           showSelectedLabels: true,
           showUnselectedLabels: true,
+          fixedColor: Colors.white,
           elevation: 0,
           backgroundColor: Colors.blue,
           unselectedItemColor: Colors.blueAccent[100],
