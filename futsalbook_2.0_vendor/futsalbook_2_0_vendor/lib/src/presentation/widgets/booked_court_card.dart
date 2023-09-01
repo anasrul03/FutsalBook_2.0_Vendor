@@ -13,9 +13,37 @@ class BookedCourtCard extends StatelessWidget {
       child: Card(
         margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        child: const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Text("Booked Court Card"),
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Stack(
+            children: [
+              const Text(
+                "Slot Booked",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              ),
+              Positioned(
+                right: 10,
+                bottom: 0,
+                child: RichText(
+                    text: const TextSpan(children: [
+                  TextSpan(
+                    text: "23",
+                    style: TextStyle(
+                        color: Colors.blue,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30),
+                  ),
+                  TextSpan(
+                    text: " courts",
+                    style: TextStyle(
+                        color: Colors.blue,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 15),
+                  )
+                ])),
+              ),
+            ],
+          ),
         ),
       ),
     );

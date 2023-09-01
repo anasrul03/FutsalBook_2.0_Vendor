@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:futsalbook_2_0_vendor/src/config/router/app_router.dart';
+import 'package:futsalbook_2_0_vendor/src/config/router/router_utils.dart';
+import 'package:futsalbook_2_0_vendor/src/presentation/widgets/custom_input_text_field.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -17,9 +20,26 @@ class LoginPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Text("Login your credentials"),
-          TextFormField(
-            decoration: InputDecoration(),
-          )
+          EmailField(
+              prefixIcon: const Icon(Icons.email),
+              hintText: "Your email...",
+              onChanged: (value) {}),
+          PasswordField(
+              obscurePassword: true,
+              onPress: () {},
+              onChanged: (value) {},
+              hintText: "Password"),
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            height: 53,
+            width: MediaQuery.of(context).size.width,
+            child: ElevatedButton(
+              onPressed: () {
+                AppRouter.router.go(PAGES.home.screenPath);
+              },
+              child: const Text("Login"),
+            ),
+          ),
         ],
       ),
     )));
