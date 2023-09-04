@@ -4,12 +4,15 @@ class Tag extends StatelessWidget {
   final Color color;
   final String text;
   final TextStyle textStyle;
-  const Tag({
-    super.key,
-    required this.color,
-    required this.text,
-    required this.textStyle,
-  });
+  final double width;
+  final double height;
+  const Tag(
+      {super.key,
+      required this.color,
+      required this.text,
+      required this.textStyle,
+      this.width = 90,
+      this.height = 20});
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +21,8 @@ class Tag extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         color: color,
       ),
-      height: 20,
-      width: 80,
+      height: height,
+      width: width,
       child: Padding(
         padding: const EdgeInsets.all(2.0),
         child: Text(

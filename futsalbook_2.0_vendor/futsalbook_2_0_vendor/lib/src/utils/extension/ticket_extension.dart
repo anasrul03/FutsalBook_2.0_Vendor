@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:futsalbook_2_0_vendor/src/utils/resources/ticket_status.dart';
 
 extension TicketConstant on TicketStatus {
-  String get ticketTitle {
+  String get statusTitle {
     switch (this) {
       case TicketStatus.booked:
         return "Booked";
