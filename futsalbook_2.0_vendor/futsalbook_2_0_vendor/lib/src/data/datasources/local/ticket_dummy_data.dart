@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:futsalbook_2_0_vendor/src/domain/models/promotion_model.dart';
 import 'package:futsalbook_2_0_vendor/src/domain/models/ticket_model.dart';
 import 'package:futsalbook_2_0_vendor/src/utils/resources/ticket_status.dart';
 
@@ -139,7 +140,47 @@ class DummyData {
     )
   ];
 
+  static final List<Promotion> _promotions = [
+    Promotion(
+      promotionID: 'PRO-001',
+      title: "New Customer Promotion",
+      description:
+          "If you are a first time user who just use the. You'll get a half priced discount",
+      createdDate: _generateRandomDate(),
+      expiredDate: _generateRandomBookedDate(),
+      discountAmount: 50,
+      couponCode: "NEWCOMER",
+      vendorID: "VED-001",
+      venueID: 'VEN-001',
+    ),
+    Promotion(
+      promotionID: 'PRO-002',
+      title: "New Customer Promotion",
+      description:
+          "If you are a first time user who just use the. You'll get a half priced discount",
+      createdDate: _generateRandomDate(),
+      expiredDate: _generateRandomBookedDate(),
+      discountAmount: 50,
+      couponCode: "NEWCOMER",
+      vendorID: "VED-001",
+      venueID: 'VEN-002',
+    ),
+    Promotion(
+      promotionID: 'PRO-001',
+      title: "New Customer Promotion",
+      description:
+          "If you are a first time user who just use the. You'll get a half priced discount",
+      createdDate: _generateRandomDate(),
+      expiredDate: _generateRandomBookedDate(),
+      discountAmount: 50,
+      couponCode: "NEWCOMER",
+      vendorID: "VED-001",
+      venueID: 'VEN-001',
+    ),
+  ];
+
   static List<Ticket> get tickets => _tickets;
+  static List<Promotion> get promotions => _promotions;
 
   static DateTime _generateRandomDate() {
     final random = Random();

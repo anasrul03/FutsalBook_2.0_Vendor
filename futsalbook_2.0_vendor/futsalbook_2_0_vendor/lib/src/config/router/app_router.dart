@@ -1,6 +1,8 @@
 //Package import
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:futsalbook_2_0_vendor/src/presentation/views/authentication/onboarding_view.dart';
+import 'package:futsalbook_2_0_vendor/src/presentation/views/authentication/registration_view.dart';
 import 'package:go_router/go_router.dart';
 
 //Local import
@@ -20,7 +22,7 @@ class AppRouter {
   static final _shellNavigatorKey = GlobalKey<NavigatorState>();
 
   static final GoRouter _router = GoRouter(
-    initialLocation: PAGES.login.screenPath,
+    initialLocation: PAGES.onboarding.screenPath,
     debugLogDiagnostics: true,
     navigatorKey: _rootNavigatorKey,
     errorBuilder: (context, state) {
@@ -89,7 +91,15 @@ class AppRouter {
         name: PAGES.onboarding.screenName,
         path: PAGES.onboarding.screenPath,
         builder: (builder, context) {
-          return const CircularView();
+          return const OnBoarding();
+        },
+      ),
+      GoRoute(
+        parentNavigatorKey: _rootNavigatorKey,
+        name: PAGES.register.screenName,
+        path: PAGES.register.screenPath,
+        builder: (builder, context) {
+          return const RegistrationPage();
         },
       ),
       GoRoute(

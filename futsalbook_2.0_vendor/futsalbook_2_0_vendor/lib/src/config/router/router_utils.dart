@@ -1,58 +1,89 @@
 enum PAGES {
+  // Entry Pages
   onboarding,
   loadingUser,
   login,
+  register,
+
+  // User's Pages
   bottomNavigationBar,
   home,
+  profile,
+  settings,
+
+  // Listing Modules Pages
+  // Booked
   bookedList,
   bookedDetails,
+
+  // Venue
   venueList,
+  venueDetails,
+
+  // Courts
+  courtList,
+  courtDetails,
+
+  // Promotions
   promotion,
   addPromotionForm,
   promotionDetails,
-  venueDetails,
-  courtList,
-  courtDetails,
-  settings,
-  profile,
-  payment,
+
+  // Payments
+  paymentList,
+  paymentDetails,
 }
 
 extension RouteUtilities on PAGES {
   String get screenPath {
     switch (this) {
+      // Entry Pages
       case PAGES.onboarding:
         return "/onboarding";
       case PAGES.loadingUser:
         return "/loadingUser";
       case PAGES.login:
         return "/login";
+
+      // User's Pages
       case PAGES.bottomNavigationBar:
         return "/bottomNavigationBar";
       case PAGES.home:
         return "/home";
+      case PAGES.settings:
+        return "/settings";
+      case PAGES.profile:
+        return "profile";
+
+      // Listing Modules Pages
+      // Booked
       case PAGES.bookedList:
         return "/booked";
       case PAGES.bookedDetails:
         return "/bookedDetails";
+
+      // Promotion
       case PAGES.promotion:
         return "/promotion";
       case PAGES.addPromotionForm:
         return "addPromotion";
       case PAGES.promotionDetails:
         return "promotionDetails";
+
+      // Venue
       case PAGES.venueList:
         return "/venueList";
       case PAGES.venueDetails:
         return "venueDetails";
+
+      // Courts
       case PAGES.courtList:
         return "/courtList";
       case PAGES.courtDetails:
         return "courtDetails";
-      case PAGES.settings:
-        return "/settings";
-      case PAGES.profile:
-        return "profile";
+
+      // Payments
+
       default:
         return "/error-404";
     }

@@ -44,10 +44,10 @@ class PromotionCard extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            _buildStack(screenWidth),
+            _buildStackImage(screenWidth),
             _buildListTile(
-              title: 'Promotion',
-              subtitle: "13th December 2023",
+              title: tileTitle,
+              subtitle: subtitle,
               contentPadding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
               trailing:
                   IconButton(onPressed: () {}, icon: const Icon(Icons.info)),
@@ -68,20 +68,20 @@ class PromotionCard extends StatelessWidget {
   }
 
 // * Widgets build
-  Widget _buildStack(double screenWidth) {
+  Widget _buildStackImage(double screenWidth) {
     return Stack(
       children: [
         _buildNetworkImage(
           width: screenWidth,
-          height: 100,
+          height: 70,
           imageUrl:
               'https://t3.ftcdn.net/jpg/04/39/62/76/360_F_439627666_4DfoWxROitsNxtHMdSZnrUYQLMwnSieN.jpg',
         ),
         _buildGradient(width: screenWidth),
         Positioned(
-          left: 17,
+          left: 10,
           bottom: 15,
-          child: _buildTitle(title: 'NEW CUSTOMER PROMOTION'),
+          child: _buildTitle(title: title),
         )
       ],
     );
@@ -91,7 +91,7 @@ class PromotionCard extends StatelessWidget {
     return Text(
       title,
       style: const TextStyle(
-          color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
+          color: Colors.white, fontWeight: FontWeight.bold, fontSize: 23),
     );
   }
 
@@ -99,7 +99,7 @@ class PromotionCard extends StatelessWidget {
     required double width,
   }) {
     return Container(
-      height: 100,
+      height: 70,
       width: width,
       foregroundDecoration: const BoxDecoration(
         gradient: LinearGradient(
@@ -140,8 +140,11 @@ class PromotionCard extends StatelessWidget {
     return ListTile(
       contentPadding: contentPadding,
       tileColor: Colors.white,
-      title: Text(title),
-      subtitle: Text(subtitle),
+      title: Text(
+        title,
+        style: const TextStyle(fontSize: 20),
+      ),
+      subtitle: Text(subtitle, style: const TextStyle(fontSize: 13)),
       trailing: trailing,
     );
   }

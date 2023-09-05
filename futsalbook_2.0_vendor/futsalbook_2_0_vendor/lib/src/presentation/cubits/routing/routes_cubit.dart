@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:futsalbook_2_0_vendor/src/config/router/app_router.dart';
 import 'package:futsalbook_2_0_vendor/src/config/router/router_utils.dart';
 import 'package:futsalbook_2_0_vendor/src/presentation/cubits/routing/routes_state.dart';
 
@@ -39,5 +40,13 @@ class RoutesCubit extends Cubit<RoutesState> {
         break;
       //can add more item here for more feature coming
     }
+  }
+
+  void goToPage(String path) {
+    AppRouter.router.go(path);
+  }
+
+  void pushToPage(String path) {
+    AppRouter.router.push(path);
   }
 }

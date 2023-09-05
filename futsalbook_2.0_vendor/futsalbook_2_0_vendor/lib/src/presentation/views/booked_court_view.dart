@@ -81,40 +81,16 @@ class BookedCourtPage extends StatelessWidget {
         itemCount: sortByStatus.length,
         itemBuilder: (context, index) {
           final ticket = DummyData.tickets[index];
-          return Stack(
-            alignment: Alignment.center,
-            children: [
-              Card(
-                margin: const EdgeInsets.only(bottom: 50, left: 4, right: 4),
-                color: Colors.blueAccent,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10)),
-                child: SizedBox(
-                  height: 60,
-                  width: double.infinity,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 2.0, left: 6),
-                    child: Text(
-                      "Booked by ${ticket.customerID}",
-                      style: const TextStyle(color: Colors.white, fontSize: 12),
-                    ),
-                  ),
-                ),
-              ),
-              Card(
-                elevation: 4,
-                child: ListTile(
-                  shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(10),
-                          bottomRight: Radius.circular(10))),
-                  tileColor: Colors.white,
-                  subtitle: _buildDateTimeWithDuration(ticket, 14),
-                  title: Text("Court ${ticket.courtID}"),
-                  trailing: _buildTrailingWidget(ticket),
-                ),
-              ),
-            ],
+          return Card(
+            elevation: 4,
+            child: ListTile(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
+              tileColor: Colors.white,
+              subtitle: _buildDateTimeWithDuration(ticket, 14),
+              title: Text("Court ${ticket.courtID}"),
+              trailing: _buildTrailingWidget(ticket),
+            ),
           );
         });
   }

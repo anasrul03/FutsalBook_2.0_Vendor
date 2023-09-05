@@ -3,4 +3,5 @@ List<String> daySelector = [
   "Tomorrow",
   "This Week",
   "Next Week",
+  "All Tickets"
 ];
