@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:futsalbook_2_0_vendor/src/config/router/router_utils.dart';
+import 'package:futsalbook_2_0_vendor/src/presentation/cubits/routing/routes_cubit.dart';
+
 import 'package:introduction_screen/introduction_screen.dart';
 
 class OnBoarding extends StatefulWidget {
@@ -28,30 +32,42 @@ class _OnBoardingState extends State<OnBoarding> {
       allowImplicitScrolling: true,
       autoScrollDuration: 5000,
       infiniteAutoScroll: true,
-      globalFooter: Column(
-        children: [
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton(
-              onPressed: () {},
-              child: const Text("Register"),
+      globalFooter: Container(
+        margin: const EdgeInsets.only(bottom: 25, left: 20, right: 20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  context
+                      .read<RoutesCubit>()
+                      .pushToPage(PAGES.register.screenPath);
+                },
+                child: const Text("Register"),
+              ),
             ),
-          ),
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton(
-              onPressed: () {},
-              child: const Text("Login"),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  context
+                      .read<RoutesCubit>()
+                      .pushToPage(PAGES.login.screenPath);
+                },
+                child: const Text("Login"),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
       pages: [
         PageViewModel(
           title: "Fractional shares",
           body:
               "Instead of having to buy an entire share, invest any amount you want.",
-          image: _buildImage('img1.jpg'),
+          image: _buildImage('assets/images/onboarding_qrcode.png'),
           decoration: pageDecoration,
         ),
         PageViewModel(
@@ -100,11 +116,11 @@ class _OnBoardingState extends State<OnBoarding> {
       ],
       onDone: () => {},
       onSkip: () => {}, // You can override onSkip callback
-      // showSkipButton: false,
       skipOrBackFlex: 0,
       nextFlex: 0,
-      showBackButton: true,
-      //rtl: true, // Display as right-to-left
+      showDoneButton: false,
+      showNextButton: false,
+      showBackButton: false,
       back: const Icon(Icons.arrow_back),
       skip: const Text('Skip', style: TextStyle(fontWeight: FontWeight.w600)),
       next: const Icon(Icons.arrow_forward),
@@ -128,19 +144,7 @@ class _OnBoardingState extends State<OnBoarding> {
     );
   }
 
-  Widget _buildImage(String assetName) {
-    return const CircleAvatar(
-      backgroundColor: Colors.blueAccent,
-    );
-  }
-
-  Widget _buildFullScreenImage() {
-    return Image.network(
-      'https://img.freepik.com/free-vector/flat-design-soccer-player-silhouette_23-2149481307.jpg?w=2000',
-      fit: BoxFit.cover,
-      height: double.infinity,
-      width: double.infinity,
-      alignment: Alignment.center,
-    );
+  Widget _buildImage(String path) {
+    return Image.asset(path);
   }
 }
